@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table{
+        width:300px;
+        background-color: cyan; 
+       
+      }
+      th,td{
+        width:40px;
+        height:30px;
+        border:5px solid black;
+        text-align:center;
+      }
+    </style>
+</head>
+<body bgcolor="green"> 
+    <h1>Calender</h1>
+    <h2>Select Year</h2>
+    <select id="year">
+        <option value="2014" selected>2014</option>
+        <option value="2015" >2015</option>
+        <option value="2016"  >2016</option>
+        <option value="2017"  >2017</option>
+        <option value="2018"    >2018</option>
+        <option value="2019"  >2019</option>
+        <option value="2020"  >2020</option>
+        <option value="2021"  >2021</option>
+        <option value="2022"  >2022</option>
+        <option value="2023"  >2023</option>
+        <option value="2024"  >2024</option>
+        <option value="2025"  >2025</option>
+    </select>
+    <h2>Select Month</h2>
+    <select id="month"> 
+    <option value="0"  selected>January</option>
+    <option value="1"  >February</option>
+    <option value="2"  >March</option>
+    <option value="3"  >April</option>
+    <option value="4"  >May</option>
+    <option value="5"  >June</option>
+    <option value="6"  >July</option>
+    <option value="7"  >August</option>
+    <option value="8"  >September</option>
+    <option value="9"  >October</option>
+    <option value="10"  >November</option>
+    <option value="11"  >December</option>
+</select>
+ <input type="button" onclick="generateCalender()" value="Ok">
+ <div id="calender"></div>
+ <script>
+    function generateCalender(){
+    let year=document.getElementById("year").value;
+    let month=document.getElementById("month").value;
+    let firstDay=new Date(year,parseInt(month),1).getDay();
+    let daysInMonth=new Date(year,parseInt(month)+1,0).getDate();
+let calender="<h2>"+new Date(parseInt(year),parseInt(month)).toLocaleString('en-US',{month:'long'}) + " "+year+"</h2>";
+    calender+="<table><tr><th>Sun</th><th>Mon</th><th>Tues</th><th>Wed</th><th>Thurs</th><th>Fri</th><th>Sat</th></tr><tr>";
+    for(let i=0;i<firstDay;i++){  
+        calender+="<td></td>";
+    }
+    for(let i=1;i<=daysInMonth;i++)
+    {
+        if((firstDay+i-1)%7==0)
+         {
+            calender+="</tr><tr>";
+         }
+         calender+=`<td>${i}</td>`;
+    }
+    calender+="</tr></table>";
+    document.getElementById("calender").innerHTML=calender;
+    }
+ </script>
+</body>
+</html>
