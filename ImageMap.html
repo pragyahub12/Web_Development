@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+    <div class="dialer">
+        <div class="butto" ><span>1</span></div>
+        <div class="butto"><span>2</span><span class="text">ABC</span></div>
+        <div class="butto"><span>3</span><span class="text">DEF</span></div>
+        <div class="butto"><span>4</span><span class="text">GHI</span></div>
+        <div class="butto"><span>5</span><span class="text">JKL</span></div>
+        <div class="butto"><span>6</span><span class="text">MNO</span></div>
+        <div class="butto"><span>7</span><span class="text">PQRS</span></div>
+        <div class="butto"><span>8</span><span class="text">TUV</span></div>
+        <diav class="butto"><span>9</span><span class="text">WXYZ</span></div>
+        <div class="butto"><span>*</span></div>
+        <div class="butto"><span>0</span></div>
+        <div class="butto"><span>#</span></div>        
+    </div>
+    -->
+    <img src="dials.jpeg" usemap="#dialpadMap" alt="Dial Pad" width="462" height="570">
+
+    <!-- Define Image Map -->
+    <map name="dialpadMap">
+        <area shape="rect" coords="10,50,140,170" href="#" onclick="showAlert('1')">
+        <area shape="rect" coords="150,50,280,170" href="#" onclick="showAlert('2')">
+        <area shape="rect" coords="290,50,420,170" href="#" onclick="showAlert('3')">
+        <area shape="rect" coords="10,180,140,300" href="#" onclick="showAlert('4')">
+        <area shape="rect" coords="150,180,280,300" href="#" onclick="showAlert('5')">
+        <area shape="rect" coords="290,180,420,300" href="#" onclick="showAlert('6')">
+        <area shape="rect" coords="10,310,140,430" href="#" onclick="showAlert('7')">
+        <area shape="rect" coords="150,310,280,430" href="#" onclick="showAlert('8')">
+        <area shape="rect" coords="290,310,420,430" href="#" onclick="showAlert('9')">
+        <area shape="rect" coords="10,440,140,560" href="#" onclick="showAlert('*')">
+        <area shape="rect" coords="150,440,280,560" href="#" onclick="showAlert('0')">
+        <area shape="rect" coords="290,440,420,560" href="#" onclick="showAlert('#')">
+    </map>
+    
+    <script>
+        function showAlert(button) {
+            alert("You pushed button " + button);
+        }
+    </script>
+</body>
+</html>
