@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     
+    #nationality{
+        color:red;
+    }
+    #h{
+        text-align:center;
+    }
+    .button{
+        text-align:center;
+    }
+    
+    .lang-container {
+    display: flex;
+      align-items:center;
+    
+}
+
+.lang-heading {
+    color: red;
+  
+    margin-right: 110px; /* Creates gap between heading and options */
+}
+
+.lang-options {
+    display: flex;
+    
+    flex-direction: column;
+    text-align: left;  /* Aligns text properly with checkboxes */
+}
+
+    .radio{
+      display:flex;
+      flex-direction:column;
+    }
+    .container{
+        border:solid black 2px;
+        padding:20px;
+        width:500px;
+        
+        text-align:center;
+        background-color: rgb(152, 209, 219);
+    }
+</style>
+<!--id is for evenet handling and name is for server side recognition-->
+<!--use javascript for making a form mandatory means if attribute is required but not filled then cursor should blink at that place also agar ki value galat kr diya h toh wapas refresh (required) kre aur use auto complete feature mtlb jo values pahle use kr chuke ho voh suggestions mai dikhaye bharne ko like name and all   and auto focus-->
+<!--use pattern using regular expressions badme -->
+<!--to preserve formatting use pre tags-?-->
+<!--for calc 1/x=1/calc.display.value
+x2=math.pow(calx.display.value)
+clear(c)=calc.display=" "
+for x^y=calc.display.value.split(",");
+basically use dom instead of event handling for evry key-->
+<body>
+    <div class="container">
+    <form id="hello" action="" autocomplete="on" > 
+    <h1 style="text-align:center" style="color:red">ENTRY FORM</h1>
+
+    <label for="name" style="color:red">Enter your name:</label>
+    &nbsp    &nbsp   &nbsp   &nbsp
+    <input type="text"  id="name" placeholder="enter you name">
+
+    <br><br>
+
+    <label for="age" style="color:red">Enter your Age:</label>
+    &nbsp   &nbsp   &nbsp   &nbsp
+    <input type="number"  id="age" placeholder="enter you age">
+
+    <br><br>
+
+    <label for="add" style="color:red"  >Enter your Address:</label>
+    &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp
+    <textarea rows="4" cols="10" required autofocus></textarea>
+    <br><br>
+    <div class="radio" >
+    <div class="gender"> 
+        <label  style="color:red">Sex:</label>
+        &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp
+        &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp
+        <input type="radio" id="female" name="gender" checked>Female
+        <br>
+        &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp
+        &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp   &nbsp
+        <input type="radio" id="male" name="gender">Male
+    </div>
+     </div>
+    <br><br>
+     
+    
+    <div class="lang-container">
+        <label class="lang-heading" style="margin-left:50px">Languages Known:</label>
+        <div class="lang-options">
+            <label>(can select more than one)</label>
+            <input type="checkbox" checked> C<br>
+            <input type="checkbox"> C++<br>
+            <input type="checkbox"> VB<br>
+            <input type="checkbox"> JAVA<br>
+            <input type="checkbox"> ASP<br>
+            <input type="checkbox"> OTHERS<br>
+        </div>
+    </div>
+    
+    
+    <br><br>
+
+  
+    <label for="pass" style="color:red">Enter your password</label>
+    &nbsp  &nbsp &nbsp &nbsp &nbsp
+    <input type="password" id="pass" >
+    <br><br>
+    <div class="button"> 
+    <input type="submit" >
+    <input type="reset" >
+</div>
+</div>
+
+
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!--Class work - <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" cellspacing=""5" cellpadding="5">
+    <tr><th>Stud_id</th><th>Name</th><th>Age</th></tr>
+    <tr><td style="color:blue">s1</td><td colspan="2">riya</td> </tr>
+    <tr><td style="color:rgb(255, 0, 30)">s1</td><td>riya</td><td rowspan="2">20</td></tr>
+    <tr><td style="color:rgb(15, 156, 34)">s1</td><td>riya</td> </tr>
+</table>
+</body>
+</html> -->
