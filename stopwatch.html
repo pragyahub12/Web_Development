@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="watch.css">
+</head>
+<body>
+    <script>
+          let laps=[];
+           let hours=0,min=0,sec=0,timer,running=false;
+
+           function display(){
+           document.getElementById("display").innerHTML=
+           (hours<10?"0"+hours:hours)+":"+(min<10?"0"+min:min)+":"+(sec<10?"0"+sec:sec);
+           }
+
+           function start(){
+            if(!running)
+           {
+            running=true;
+             timer=setInterval(()=>{
+               sec++;
+               if(sec==60)
+               {
+                    min++;
+                    sec=0;
+               }
+               if(min==60)
+               {
+                hours++;
+                min=0;
+               }
+               display();
+             },1000);
+            }
+           }
+
+           function pause(){
+            clearInterval(timer);
+            running=false;
+           }
+
+           function reset(){
+            clearInterval(timer);
+           sec=0;
+           hours=0;
+           min=0;
+           laps=[];
+           document.getElementById("list").innerText="";
+           running=false;
+           display();
+           }
+
+           function save(){
+            if(running){
+                let listItem=document.createElement("li");  
+                let lapTime=(hours<10?"0"+hours:hours)+":"+(min<10?"0"+min:min)+":"+(sec<10?+"0"+sec:sec);
+                laps.push(lapTime);
+                listItem.innerHTML="lap"+laps.length+":"+lapTime;
+                document.getElementById("list").appendChild(listItem);
+            }
+           }
+           
+    </script>
+    <div class="container">
+        <div id="display">
+        00:00:00
+        </div>
+        <div class="btn">
+            <input type="button" onclick="start()" value="START">
+             <input type="button" onclick="pause()" value="PAUSE">
+             <input type="button" onclick="reset()" value="RESET">
+        </div>
+        <div class="save">
+              <input type="button" value="SAVE LAP" onclick="save()">
+        </div>
+        <ul id="list"></ul>
+    </div>
+</body>
+</html>

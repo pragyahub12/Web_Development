@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height:500px;
+    width:500px;
+    margin:100px;
+    background-color: rgb(234, 225, 225);
+}
+.container >div{
+    margin:20px;
+}
+.display{
+    height:150px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+ 
+}
+.btn{
+    height:100px;
+    display:flex;
+    justify-content:space-between;
+}
+input[type="button"]{
+    width:120px;
+    border:none;
+    font-weight:bold;
+    background-color: rgb(197, 191, 191);
+}
+.save{
+    height:100px;
+    display:flex;
+    font-weight:bold;
+    justify-content: center;
+    align-items:center;
+    background-color: rgb(198, 197, 197);
+}
